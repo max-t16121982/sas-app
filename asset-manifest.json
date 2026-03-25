@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/sas-app/static/js/main.e08c0b5c.js",
+    "index.html": "/sas-app/index.html",
+    "main.e08c0b5c.js.map": "/sas-app/static/js/main.e08c0b5c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e08c0b5c.js"
+  ]
+}
