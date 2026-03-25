@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter,Routes,Route } from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Login from "./pages/Login"
+import Dashboard from "./pages/Dashboard"
+import Ledger from "./pages/Ledger"
+import SalesOutstanding from "./pages/SalesOutstanding"
+/*import Sales from "./pages/Sales"
+import Purchase from "./pages/Purchase"
+import SalesOutstanding from "./pages/SalesOutstanding"
+import PurchaseOutstanding from "./pages/PurchaseOutstanding"
+import MillOutstanding from "./pages/MillOutstanding"
+*/
+function App(){
+
+const user=localStorage.getItem("user")
+
+return(
+
+<BrowserRouter>
+
+<Routes>
+
+<Route path="/" element={user?<Dashboard/>:<Login/>}/>
+<Route path="/dashboard" element={<Dashboard/>}/>
+<Route path="/ledger" element={<Ledger/>}/>
+<Route path="/sales-outstanding" element={<SalesOutstanding/>}/>
+{/* <Route path="/sales" element={<Sales/>}/>
+<Route path="/purchase" element={<Purchase/>}/>
+<Route path="/sales-outstanding" element={<SalesOutstanding/>}/>
+<Route path="/purchase-outstanding" element={<PurchaseOutstanding/>}/>
+<Route path="/mill-outstanding" element={<MillOutstanding/>}/>
+ */}
+</Routes>
+
+</BrowserRouter>
+
+)
+
 }
 
-export default App;
+export default App
